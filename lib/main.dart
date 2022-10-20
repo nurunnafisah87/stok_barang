@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: MyHomePage(),
-      // home: ListStok(),
     );
   }
 }
@@ -48,10 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(40.0),
+        padding: EdgeInsets.all(20.0),
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 90),
+            padding: const EdgeInsets.only(top: 40),
+            child: Column(
+              children: [
+                Image.asset("gambar/gamis.png"),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 105, 100, 100)),

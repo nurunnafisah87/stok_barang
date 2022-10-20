@@ -89,11 +89,9 @@ class _ListStokState extends State<ListStok> {
                             Icons.edit,
                             color: Colors.grey,
                           )),
-                      // button hapus
                       IconButton(
                         icon: Icon(Icons.delete, color: Colors.red),
                         onPressed: () {
-                          //membuat dialog konfirmasi hapus
                           AlertDialog hapus = AlertDialog(
                             title: Text("Peringatan!"),
                             content: Container(
@@ -102,9 +100,6 @@ class _ListStokState extends State<ListStok> {
                                 children: [Text("Yakin ingin Menghapus Data")],
                               ),
                             ),
-                            //terdapat 2 button.
-                            //jika ya maka jalankan _deletestok() dan tutup dialog
-                            //jika tidak maka tutup dialog
                             actions: [
                               TextButton(
                                   onPressed: () {
@@ -159,7 +154,6 @@ class _ListStokState extends State<ListStok> {
     });
   }
 
-  //menghapus data Stok
   Future<void> _deleteStok(Stok stok, int position) async {
     await db.deleteStok(stok.id!);
     setState(() {
@@ -167,7 +161,6 @@ class _ListStokState extends State<ListStok> {
     });
   }
 
-  // membuka halaman tambah Stok
   Future<void> _openFormCreate() async {
     var result = await Navigator.push(
         context, MaterialPageRoute(builder: (context) => FormStok()));
@@ -176,7 +169,6 @@ class _ListStokState extends State<ListStok> {
     }
   }
 
-  //membuka halaman edit Stok
   Future<void> _openFormEdit(Stok stok) async {
     var result = await Navigator.push(
         context, MaterialPageRoute(builder: (context) => FormStok(stok: stok)));

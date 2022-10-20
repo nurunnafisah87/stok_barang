@@ -1,8 +1,3 @@
-// ignore_for_file: non_constant_identifier_names
-
-//dbhelper ini dibuat untuk
-//membuat database, membuat tabel, proses insert, read, update dan delete
-
 import 'package:flutter_crud_uts_lagi/model/stok.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
@@ -38,7 +33,6 @@ class DbHelper {
     return await openDatabase(path, version: 1, onCreate: _onCreate);
   }
 
-  //membuat tabel dan field
   Future<void> _onCreate(Database db, int version) async {
     var sql = "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY, "
         "$columnName TEXT,"
